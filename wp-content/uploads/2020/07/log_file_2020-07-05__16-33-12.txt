@@ -1,0 +1,64 @@
+
+---Downloaded files---
+The import files for: Houzez02 were successfully downloaded!
+Initial max execution time = 30
+Files info:
+Site URL = https://cutlercayhomes.com
+Data file = /homepages/9/d834527779/htdocs/app834527843/wp-content/uploads/2020/07/demo-content-import-file_2020-07-05__16-33-12.xml
+Widget file = /homepages/9/d834527779/htdocs/app834527843/wp-content/uploads/2020/07/demo-widgets-import-file_2020-07-05__16-33-12.json
+Customizer file = not defined!
+Redux files:
+houzez_options -> /homepages/9/d834527779/htdocs/app834527843/wp-content/uploads/2020/07/demo-redux-import-file_0-2020-07-05__16-33-12.json 
+
+
+---pt-ocdi/before_content_import---
+
+
+---Importing widgets---
+Default Sidebar : 
+
+Archives - No Title - Imported
+Categories - No Title - Imported
+Meta - No Title - Imported
+
+Property Listings : 
+
+HOUZEZ: Featured Properties - Featured Listings - Imported
+HOUZEZ: Property Taxonomies - Property Type - Imported
+HOUZEZ: Property Taxonomies - Cities - Imported
+
+Search Sidebar : 
+
+HOUZEZ: Featured Properties - Featured - Imported
+
+Page Sidebar : 
+
+HOUZEZ: Featured Properties - Featured - Imported
+HOUZEZ: Property Taxonomies - Discover - Imported
+HOUZEZ: Latest Posts - Latest Posts - Imported
+
+Agency Sidebar : 
+
+HOUZEZ: Agency Search - Find Agency - Imported
+HOUZEZ: Featured Properties - Featured - Imported
+
+Agent Sidebar : 
+
+HOUZEZ: Agent Search - Find Agent - Imported
+HOUZEZ: Recent View Properties - Recent Viewed  - Imported
+
+Footer Area 1 : 
+
+HOUZEZ: Property Taxonomies - Discover - Widget already exists
+
+Footer Area 2 : 
+
+HOUZEZ: Contact Us - Contact Us - Widget already exists
+
+
+
+---Importing Redux settings---
+Redux settings import for: houzez_options finished successfully!
+
+---pt-ocdi/after_import---
+
