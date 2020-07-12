@@ -6278,6 +6278,7 @@ label.control.control--checkbox.hz-checkbox-0 {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 767.98px) {
   .half-map-right-wrap .pagination-wrap {
