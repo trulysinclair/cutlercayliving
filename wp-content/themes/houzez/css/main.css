@@ -6296,29 +6296,29 @@ label.control.control--checkbox.hz-checkbox-0 {
 
 @media (min-width: 1201px) {
   .half-map-left-wrap {
-    width: calc(100% - 780px);
+    width: calc(85% - 780px);
   }
 
   .half-map-right-wrap {
-    width: 780px;
+    width: calc(780px + 15%);
   }
 }
 @media (max-width: 1200px) {
   .half-map-left-wrap {
-    width: calc(100% - 640px);
+    width: calc(85% - 640px);
   }
 
   .half-map-right-wrap {
-    width: 640px;
+    width: calc(640px + 15%);
   }
 }
 @media (max-width: 991px) {
   .half-map-left-wrap {
-    width: calc(100% - 375px);
+    width: calc(85% - 375px);
   }
 
   .half-map-right-wrap {
-    width: 375px;
+    width: calc(375px + 15%);
   }
   .half-map-right-wrap .grid-view .item-listing-wrap {
     width: 100%;
