@@ -327,21 +327,35 @@ jQuery(function ($) {
           }
         };
 
-        var houzezMarkerInfoWindow = function (map, marker, infowindow) {
-          google.maps.event.addListener(marker, "click", function () {
-            hideInfoWindows();
-            infowindow.open(map, marker);
-            checkOpenedWindows.push(infowindow);
+        let isInfoWindowOpen = false;
 
-            // Add lazy load for info window
-            var infoWindowImage = infowindow
-              .getContent()
-              .getElementsByClassName("listing-thumbnail");
-            if (infoWindowImage.length) {
-              if (infoWindowImage[0].dataset.src) {
-                infoWindowImage[0].src = infoWindowImage[0].dataset.src;
+        var houzezMarkerInfoWindow = function (map, marker, infowindow) {
+          if (isInfoWindowOpen == false) {
+            google.maps.event.addListener(marker, "click", function () {
+              hideInfoWindows();
+              infowindow.open(map, marker);
+              checkOpenedWindows.push(infowindow);
+
+              // Add lazy load for info window
+              var infoWindowImage = infowindow
+                .getContent()
+                .getElementsByClassName("listing-thumbnail");
+              if (infoWindowImage.length) {
+                if (infoWindowImage[0].dataset.src) {
+                  infoWindowImage[0].src = infoWindowImage[0].dataset.src;
+                }
               }
-            }
+              // Mark the info window open
+              isInfoWindowOpen = true;
+            });
+          }
+
+          google.maps.event.addListener(marker, "mouseout", function () {
+            hideInfoWindows();
+            console.log("attempt leave");
+            infowindow.close();
+            // Close the info window
+            isInfoWindowOpen = false;
           });
         };
 
@@ -356,11 +370,10 @@ jQuery(function ($) {
                 '"><div class="gm-marker-price">' +
                 map_properties[i].pricePin +
                 "</div></div>";
-
               var marker = new RichMarker({
                 map: houzezMap,
                 position: new google.maps.LatLng(
-                  map_properties[i].lat,
+                  Number(map_properties[i].lat) + 0.0001,
                   map_properties[i].lng
                 ),
                 draggable: false,
