@@ -327,13 +327,14 @@ jQuery(function ($) {
           }
         };
 
-        let isInfoWindowOpen = false;
-
         var houzezMarkerInfoWindow = function (map, marker, infowindow) {
+          let isInfoWindowOpen = false;
+
           if (isInfoWindowOpen == false) {
             google.maps.event.addListener(marker, "click", function () {
               hideInfoWindows();
               infowindow.open(map, marker);
+
               checkOpenedWindows.push(infowindow);
 
               // Add lazy load for info window
@@ -347,16 +348,20 @@ jQuery(function ($) {
               }
               // Mark the info window open
               isInfoWindowOpen = true;
+              // Set a timeout to auto-close the info window
+              setTimeout(function () {
+                infowindow.close();
+                isInfoWindowOpen = false;
+              }, 2500);
             });
           }
 
-          google.maps.event.addListener(marker, "mouseout", function () {
-            hideInfoWindows();
-            console.log("attempt leave");
-            infowindow.close();
-            // Close the info window
-            isInfoWindowOpen = false;
-          });
+          //   google.maps.event.addListener(marker, "mouseout", function () {
+          //     hideInfoWindows();
+          //     infowindow.close();
+          //     // Close the info window
+          //     isInfoWindowOpen = false;
+          //   });
         };
 
         for (var i = 0; i < map_properties.length; i++) {
