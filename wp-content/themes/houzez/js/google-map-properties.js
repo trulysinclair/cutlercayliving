@@ -355,13 +355,6 @@ jQuery(function ($) {
               }, 2500);
             });
           }
-
-          //   google.maps.event.addListener(marker, "mouseout", function () {
-          //     hideInfoWindows();
-          //     infowindow.close();
-          //     // Close the info window
-          //     isInfoWindowOpen = false;
-          //   });
         };
 
         for (var i = 0; i < map_properties.length; i++) {
