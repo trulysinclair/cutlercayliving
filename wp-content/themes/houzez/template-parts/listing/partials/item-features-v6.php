@@ -1,4 +1,4 @@
-<ul class="item-amenities item-amenities-with-icons">
+<ul id="v6" class="item-amenities item-amenities-with-icons">
 	<?php
 	$listing_data_composer = houzez_option('listing_data_composer');
 	$data_composer = $listing_data_composer['enabled'];
@@ -21,7 +21,7 @@
 				$custom_field_value = houzez_get_listing_data($key);
 				$output = '';
 				if( $custom_field_value != '' ) { 
-					$output .= '<li class="h-'.$key.'">';
+					$output .= '<li id="v6" class="h-'.$key.'">';
 
 						if(houzez_option('icons_type') == 'font-awesome') {
 							$output .= '<i class="'.houzez_option('fa_'.$key).' mr-1"></i>';

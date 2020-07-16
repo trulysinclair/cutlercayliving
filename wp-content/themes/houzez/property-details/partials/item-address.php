@@ -3,7 +3,7 @@ $address_composer = houzez_option('listing_address_composer');
 $enabled_data = $address_composer['enabled'];
 $temp_array = array();
 
-echo '<address class="item-address"><i class="houzez-icon icon-pin mr-1"></i>';
+echo '<address id="details" class="item-address"><i class="houzez-icon icon-pin mr-1"></i>';
 
 if ($enabled_data) {
 	unset($enabled_data['placebo']);

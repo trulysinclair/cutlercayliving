@@ -331,7 +331,7 @@ jQuery(function ($) {
           let isInfoWindowOpen = false;
 
           if (isInfoWindowOpen == false) {
-            google.maps.event.addListener(marker, "click", function () {
+            google.maps.event.addListener(marker, "mouseover", function () {
               hideInfoWindows();
               infowindow.open(map, marker);
 
@@ -350,6 +350,7 @@ jQuery(function ($) {
               isInfoWindowOpen = true;
               // Set a timeout to auto-close the info window
               setTimeout(function () {
+                console.log("closing info window");
                 infowindow.close();
                 isInfoWindowOpen = false;
               }, 2500);
@@ -436,6 +437,9 @@ jQuery(function ($) {
                 '" alt="' +
                 map_properties[i].title +
                 '"/>' +
+                '<p class="info-window-price">' +
+                map_properties[i].price +
+                "</p>" +
                 "</a>";
             } else {
               innerHTML +=
@@ -463,10 +467,10 @@ jQuery(function ($) {
 
             innerHTML += '<ul class="list-unstyled item-info">';
 
-            if (map_properties[i].price) {
-              innerHTML +=
-                '<li class="item-price">' + map_properties[i].price + "</li>";
-            }
+            // if (map_properties[i].price) {
+            //   innerHTML +=
+            //     '<li class="item-price">' + map_properties[i].price + "</li>";
+            // }
 
             if (map_properties[i].property_type) {
               innerHTML +=
@@ -553,7 +557,7 @@ jQuery(function ($) {
                 markerClusterer.repaint();
               }
 
-              google.maps.event.trigger(markers[i], "click");
+              google.maps.event.trigger(markers[i], "mouseover");
             }
           });
         });
@@ -627,6 +631,7 @@ jQuery(function ($) {
             if (data.getProperties === true) {
               clearClusterer();
               reloadMarkers();
+              console.log(data);
               houzezAddMarkers(data.properties, houzezMap);
               houzez_map_bounds();
 

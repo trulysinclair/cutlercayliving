@@ -13,6 +13,7 @@
             }?>
             <?php get_template_part('property-details/partials/title'); ?> 
             <?php get_template_part('property-details/partials/item-address'); ?>
+            <!-- testy -->
             <?php get_template_part('property-details/partials/item-price'); ?>
             <?php get_template_part('property-details/partials/item-labels-mobile'); ?>
         </div><!-- mobile-property-title -->
