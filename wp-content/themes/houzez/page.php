@@ -43,7 +43,7 @@ $page_bg = 'page-content-wrap';
                     </div>
                 </div><!-- bt-content-wrap -->
                 <div class="col-lg-4 col-md-12 bt-sidebar-wrap <?php if( $sticky_sidebar['page_sidebar'] != 0 ){ echo 'houzez_sticky'; }?>">
-                    <div class="theiaStickySidebar">
+                    <div id="westy" class="theiaStickySidebar">
                         <?php
 						if( $sidebar_meta['specific_sidebar'] == 'yes' ) {
 							if( is_active_sidebar( $sidebar_meta['selected_sidebar'] ) ) {

@@ -73,7 +73,7 @@ $sidebar_meta = houzez_get_sidebar_meta($post->ID);
 
             <?php if( $page_sidebar != 'none' ) { ?>
             <div class="col-lg-4 col-md-12 bt-sidebar-wrap <?php if( $sticky_sidebar['page_sidebar'] != 0 ){ echo 'houzez_sticky'; }?>">
-                <div class="theiaStickySidebar">
+                <div id="testy" class="theiaStickySidebar">
                     <?php
 					if( $sidebar_meta['specific_sidebar'] == 'yes' ) {
 						if( is_active_sidebar( $sidebar_meta['selected_sidebar'] ) ) {

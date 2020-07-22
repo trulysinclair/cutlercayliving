@@ -66,23 +66,20 @@ if (!function_exists('elementor_theme_do_location') || !elementor_theme_do_locat
                     // get_template_part('property-details/lowered-details');
                 } elseif ($top_area == 'v2') {
                     get_template_part('property-details/top-area-v2');
-                    echo '<span>v2</span>';
                 } elseif (($top_area == 'v3' || $top_area == 'v4') && $property_layout == 'v2') {
                     echo '<div class="container">';
                     get_template_part('property-details/top-area-v3-4');
                     echo '</div>';
-                    echo '<span>v3</span>';
                 } elseif ($top_area == 'v5') {
                     get_template_part('property-details/top-area-v5');
-                    echo '<span>v5</span>';
                 } elseif ($top_area == 'v6') {
                     get_template_part('property-details/top-area-v6');
-                    echo '<span>v6</span>';
                 }
 
-                if ($top_area != 'v5' && $top_area != 'v2') {
-                    get_template_part('property-details/property-title');
-                }
+                // if ($top_area != 'v5' && $top_area != 'v2') {
+                //     get_template_part('property-details/property-title');
+                //     echo '<span>testy-westy</span>';
+                // }
 
                 if ($loggedin_to_view == 1 && !is_user_logged_in()) {
 
@@ -111,6 +108,11 @@ if (!function_exists('elementor_theme_do_location') || !elementor_theme_do_locat
                                     <?php
                                     if ($top_area == 'v3') {
                                         get_template_part('property-details/top-area-v3-4');
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($top_area != 'v5' && $top_area != 'v2') {
+                                        get_template_part('property-details/property-title');
                                     }
                                     ?>
                                     <div class="property-view">

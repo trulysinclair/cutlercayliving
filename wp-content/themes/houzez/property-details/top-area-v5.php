@@ -1,5 +1,5 @@
 <div class="property-top-wrap">
-    <div class="property-banner">
+	<div class="property-banner">
 		<div class="container hidden-on-mobile">
 			<?php get_template_part('property-details/partials/banner-nav'); ?>
 		</div><!-- container -->

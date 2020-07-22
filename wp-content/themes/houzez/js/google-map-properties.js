@@ -330,32 +330,38 @@ jQuery(function ($) {
         var houzezMarkerInfoWindow = function (map, marker, infowindow) {
           let isInfoWindowOpen = false;
 
-          if (isInfoWindowOpen == false) {
-            google.maps.event.addListener(marker, "mouseover", function () {
-              hideInfoWindows();
-              infowindow.open(map, marker);
+          // if (isInfoWindowOpen == false) {
+          google.maps.event.addListener(marker, "mouseover", function () {
+            hideInfoWindows();
+            infowindow.open(map, marker);
 
-              checkOpenedWindows.push(infowindow);
+            checkOpenedWindows.push(infowindow);
 
-              // Add lazy load for info window
-              var infoWindowImage = infowindow
-                .getContent()
-                .getElementsByClassName("listing-thumbnail");
-              if (infoWindowImage.length) {
-                if (infoWindowImage[0].dataset.src) {
-                  infoWindowImage[0].src = infoWindowImage[0].dataset.src;
-                }
+            // Add lazy load for info window
+            var infoWindowImage = infowindow
+              .getContent()
+              .getElementsByClassName("listing-thumbnail");
+            if (infoWindowImage.length) {
+              if (infoWindowImage[0].dataset.src) {
+                infoWindowImage[0].src = infoWindowImage[0].dataset.src;
               }
-              // Mark the info window open
-              isInfoWindowOpen = true;
-              // Set a timeout to auto-close the info window
-              setTimeout(function () {
-                console.log("closing info window");
-                infowindow.close();
-                isInfoWindowOpen = false;
-              }, 2500);
-            });
-          }
+            }
+            // Mark the info window open
+            isInfoWindowOpen = true;
+            // Set a timeout to auto-close the info window
+            // setTimeout(function () {
+            //   console.log("closing info window");
+            //   infowindow.close();
+            //   isInfoWindowOpen = false;
+            // }, 2500);
+          });
+
+          google.maps.event.addListener(marker, "mouseout", function () {
+            hideInfoWindows();
+            infowindow.close();
+            isInfoWindowOpen = false;
+          });
+          // }
         };
 
         for (var i = 0; i < map_properties.length; i++) {

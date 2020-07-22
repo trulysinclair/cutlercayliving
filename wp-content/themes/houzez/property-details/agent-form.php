@@ -30,7 +30,7 @@ if($return_array['is_single_agent'] == false || empty($agent_number) || wp_is_mo
 $agent_email = is_email( $return_array['agent_email'] );
 if ($agent_email && $agent_display != 'none') {
 ?>
-<div class="property-form-wrap">
+	<div class="property-form-wrap">
 
 	<?php 
 	if(houzez_form_type()) {
@@ -128,4 +128,3 @@ if ($agent_email && $agent_display != 'none') {
 	<?php } ?>
 </div><!-- property-form-wrap -->
 <?php } ?>
-
