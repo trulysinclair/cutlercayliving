@@ -12,7 +12,7 @@ if (isset($_GET['agent_form']) && $_GET['agent_form'] == 'yes') {
     <?php
     if (is_singular('property')) {
 
-        get_template_part('property-details/schedule-a-tour');
+        // get_template_part('property-details/schedule-a-tour');
         
         if ($agent_form != 0) {
             get_template_part('property-details/agent', 'form');

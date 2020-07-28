@@ -19,5 +19,17 @@ if ($prop_bed != '') {
 
 	$output .= '<span class="item-amenities-text">' . esc_attr($prop_bed_label) . ':</span> <span class="hz-figure">' . esc_attr($prop_bed) . '</span>';
 	$output .= '</li>';
+
+	$output .= '<script defer>' .
+	'if (!window.propertyValues) {' .
+		'console.log("Creating propertyValues");'.
+		'window.propertyValues = new Map();' .
+		'window.propertyValues.set("'.get_the_ID().'-bed", '.esc_attr($prop_bed).');' .
+		'} else {' .
+			'window.propertyValues.set("'.get_the_ID().'-bed", '.esc_attr($prop_bed).');' .
+			'console.log(propertyValues.entries());'.
+			'}'.
+			'</script>';
+	$output .= '<!-- TheGrimSilence: Set Global Property Values -->';
 }
 echo $output;

@@ -21,5 +21,17 @@ if( !empty( $listing_area_size ) ) {
 		
 		$output .= '<span class="hz-figure">'.esc_attr($listing_area_size).'</span> <span class="area_postfix">'.esc_attr($listing_size_unit).'</span>';
 	$output .= '</li>';
+
+	$output .= '<script defer>' .
+	'if (!window.propertyValues) {' .
+		'console.log("Creating propertyValues");'.
+		'window.propertyValues = new Map();' .
+		'window.propertyValues.set("'.get_the_ID().'-area", '.esc_attr($listing_area_size).');' .
+		'} else {' .
+			'window.propertyValues.set("'.get_the_ID().'-area", '.esc_attr($listing_area_size).');' .
+			'console.log(propertyValues.entries());'.
+			'}'.
+			'</script>';
+	$output .= '<!-- TheGrimSilence: Set Global Property Values -->';
 }
 echo $output;

@@ -18,5 +18,17 @@ if( $prop_bath != '' ) {
 		}
 		$output .= '<span class="item-amenities-text">'.esc_attr($prop_bath_label).':</span> <span class="hz-figure">'.esc_attr($prop_bath).'</span>';
 	$output .= '</li>';
+
+	$output .= '<script defer>' .
+	'if (!window.propertyValues) {' .
+		'console.log("Creating propertyValues");'.
+		'window.propertyValues = new Map();' .
+		'window.propertyValues.set("'.get_the_ID().'-bath", '.esc_attr($prop_bath).');' .
+		'} else {' .
+			'window.propertyValues.set("'.get_the_ID().'-bath", '.esc_attr($prop_bath).');' .
+			'console.log(propertyValues.entries());'.
+			'}'.
+			'</script>';
+	$output .= '<!-- TheGrimSilence: Set Global Property Values -->';
 }
 echo $output;
